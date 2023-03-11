@@ -4,11 +4,12 @@
 </template>
 
 <script setup lang="ts">
-const { action, link } = withDefaults(
-  defineProps<{
-    action?: (e: MouseEvent) => void;
-    link?: string;
-  }>(),
-  { link: '/' }
-);
+type action = {
+  action?: (e: MouseEvent) => void;
+  link?: string;
+};
+
+const { action, link } = withDefaults(defineProps<action>(), {
+  link: '/',
+});
 </script>
